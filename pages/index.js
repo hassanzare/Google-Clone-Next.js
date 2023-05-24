@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import Image from "next/image";
 import { MagnifyingGlassIcon, MicrophoneIcon } from "@heroicons/react/24/solid";
 
@@ -35,6 +36,7 @@ export default function Home() {
         </div>
       </form>
       {/* footer */}
+      <Footer />
     </div>
   );
 }
