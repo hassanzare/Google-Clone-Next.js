@@ -4,11 +4,26 @@ export default function User() {
   const { data: session } = useSession();
 
   if (session) {
-    return <>Sign out</>;
-  }
-  return (
-    <>
-      <button onClick={signIn}>Sign in</button>
-    </>
-  );
+    console.log(session.user.image);
+    return (
+      <>
+        <img
+          onClick={signOut}
+          src={session.user.image}
+          alt="googleusercontent"
+          className="hover:bg-gray-200 h-10 w-10 rounded-full cursor-pointer p-1"
+        />
+      </>
+    );
+  } else
+    return (
+      <>
+        <button
+          className="bg-blue-500 text-white px-6 py-2 font-medium rounded-md hover:brightness-105  hover:shadow-md"
+          onClick={signIn}
+        >
+          Sign in
+        </button>
+      </>
+    );
 }
